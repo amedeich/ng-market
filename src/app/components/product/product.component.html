@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div class="title-container">
+    <h2>Productos en tienda</h2>
+  </div>
+  <div class="search-container">
+    <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton">
+      <input type="text" nz-input placeholder="Busca un producto..." />
+    </nz-input-group>
+    <ng-template #suffixIconButton>
+      <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
+    </ng-template>
+  </div>
+</div>
+
+<div class="products">
+  <nz-card nzHoverable [nzCover]="coverTemplate">
+    <div class="card-content">
+      <span>Content...</span>
+    </div>
+  </nz-card>
+  <ng-template #coverTemplate>
+    <img class="product-img" src="https://images.sportsdirect.com/images/products/60611703_l.jpg" loading="lazy" />
+  </ng-template>
+  <nz-card nzHoverable [nzCover]="coverTemplate2">
+    <div class="card-content">
+      <span>Content...</span>
+    </div>
+  </nz-card>
+  <ng-template #coverTemplate2>
+    <img class="product-img"
+      src="https://static.pullandbear.net/2/photos/2021/V/0/1/p/4681/417/400/4681417400_1_1_3.jpg?t=1614878531175"
+      loading="lazy" />
+  </ng-template>
+
+</div>
