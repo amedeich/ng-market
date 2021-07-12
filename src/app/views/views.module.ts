@@ -1,18 +1,21 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ProductsComponent } from './products/products.component';
-import { ComponentsModule } from '../components/components.module';
+import { NgModule } from '@angular/core'
+import { CartModule } from './cart/cart.module';
+import { LoginModule } from './login/login.module';
+import { ProductsModule } from './products/products.module';
+import { UserModule } from './user/user.module';
 
 @NgModule({
-  declarations: [
-    ProductsComponent
+  imports: [
+    ProductsModule,
+    UserModule,
+    LoginModule,
+    CartModule
   ],
   exports: [
-    ProductsComponent
-  ],
-  imports: [
-    CommonModule,
-    ComponentsModule
+    ProductsModule,
+    UserModule,
+    LoginModule,
+    CartModule
   ]
 })
 export class ViewsModule { }

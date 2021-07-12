@@ -7,6 +7,9 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { HeaderComponent } from './header/header.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { RouterModule } from '@angular/router';
+import { CartModule } from '../views/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     CommonModule,
+    CartModule,
+    RouterModule,
     DirectivesModule,
     NzIconModule,
     NzInputModule,
     NzCardModule,
-    NzButtonModule
+    NzButtonModule,
+    NzDrawerModule
   ]
 })
 export class ComponentsModule { }

@@ -1,18 +1,31 @@
 <div class="header-container">
   <div class="container">
     <div class="title-container">
-      <span class="logo">NgMarket<span class="logo-mark">!!</span></span>
+      <span routerLink="/products" class="logo">NgMarket<span class="logo-mark">!!</span></span>
     </div>
     <div class="app-slogan">
       <span>Encuentra los productos más top del mercado de tecnología</span>
     </div>
     <div class="menu-container">
       <div class="menu-icon">
-        <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="user"></i></button>
+        <button routerLink="/user" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="user"></i></button>
       </div>
       <div class="menu-icon">
-        <button nz-button nzType="default" nzShape="circle"><i nz-icon nzType="shopping-cart"></i></button>
+        <button (click)="openCart()" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="shopping-cart"></i></button>
       </div>
     </div>
   </div>
 </div>
+
+
+<nz-drawer
+      [nzClosable]="false"
+      [nzVisible]="showCart"
+      [nzPlacement]="placement"
+      nzTitle="Carrito de compras"
+      (nzOnClose)="closeCart()"
+    >
+      <ng-container *nzDrawerContent>
+        <app-cart></app-cart>
+      </ng-container>
+    </nz-drawer>

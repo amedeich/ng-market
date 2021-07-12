@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NzDrawerPlacement } from 'ng-zorro-antd/drawer';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  showCart = false;
+  placement: NzDrawerPlacement = 'right';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openCart(): void {
+    this.showCart = true;
+  }
+
+  closeCart(): void {
+    this.showCart = false;
   }
 
 }
