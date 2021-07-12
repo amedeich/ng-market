@@ -4,17 +4,15 @@ import { NzDrawerPlacement } from 'ng-zorro-antd/drawer';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-
   showCart = false;
   placement: NzDrawerPlacement = 'right';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   openCart(): void {
     this.showCart = true;
@@ -23,5 +21,4 @@ export class HeaderComponent implements OnInit {
   closeCart(): void {
     this.showCart = false;
   }
-
 }

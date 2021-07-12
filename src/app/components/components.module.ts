@@ -12,14 +12,8 @@ import { RouterModule } from '@angular/router';
 import { CartModule } from '../views/cart/cart.module';
 
 @NgModule({
-  declarations: [
-    ProductComponent,
-    HeaderComponent
-  ],
-  exports: [
-    ProductComponent,
-    HeaderComponent
-  ],
+  declarations: [ProductComponent, HeaderComponent],
+  exports: [ProductComponent, HeaderComponent],
   imports: [
     CommonModule,
     CartModule,
@@ -29,7 +23,7 @@ import { CartModule } from '../views/cart/cart.module';
     NzInputModule,
     NzCardModule,
     NzButtonModule,
-    NzDrawerModule
-  ]
+    NzDrawerModule,
+  ],
 })
-export class ComponentsModule { }
+export class ComponentsModule {}

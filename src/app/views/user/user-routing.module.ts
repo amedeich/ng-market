@@ -8,18 +8,18 @@ const routes: Routes = [
     children: [
       {
         path: 'profile',
-        component: UserComponent
+        component: UserComponent,
       },
       {
         path: '**',
-        redirectTo: 'profile'
-      }
-    ]
-  }
+        redirectTo: 'profile',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}

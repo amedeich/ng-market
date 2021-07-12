@@ -15,15 +15,15 @@
   margin: 0 auto;
   display: grid;
   grid-gap: 1rem;
-  padding: 20px
+  padding: 20px;
 }
 
 .product-img {
-  width: 220px; 
-  height: 220px; 
-  object-fit: cover; 
-  background-color: gray; 
-  margin: auto
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  background-color: gray;
+  margin: auto;
 }
 
 @media (max-width: 400px) {
@@ -33,13 +33,17 @@
 }
 
 @media (min-width: 600px) {
-  .products { grid-template-columns: repeat(3, 1fr); }
+  .products {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (min-width: 900px) {
-  .products { grid-template-columns: repeat(4, 1fr); }
+  .products {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .ant-card-bordered {
-  border: 1px solid  transparent !important;
+  border: 1px solid transparent !important;
 }

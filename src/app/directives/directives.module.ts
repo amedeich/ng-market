@@ -6,8 +6,6 @@ import { LazyImgDirective } from './lazy-img.directive';
 @NgModule({
   declarations: [LazyImgDirective],
   exports: [LazyImgDirective],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class DirectivesModule { }
+export class DirectivesModule {}
