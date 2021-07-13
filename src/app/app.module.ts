@@ -26,10 +26,10 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    StoreModule.forRoot({}, {metaReducers: [clearState]}),
+    StoreModule.forRoot({}, { metaReducers: [clearState] }),
     StoreModule.forFeature('market', reducers),
     EffectsModule.forRoot(),
-    EffectsModule.forFeature(effects)
+    EffectsModule.forFeature(effects),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],

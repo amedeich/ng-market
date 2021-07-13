@@ -23,7 +23,7 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     NzButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    NzTypographyModule
+    NzTypographyModule,
   ],
 })
 export class LoginModule {}

@@ -1,5 +1,5 @@
-import { AuthService } from './auth.service'
+import { AuthService } from './auth.service';
 
-export const serives: any[] = [AuthService]
+export const serives: any[] = [AuthService];
 
-export * from './auth.service'
+export * from './auth.service';

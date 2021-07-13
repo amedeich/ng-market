@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { LoginState } from './store/reducers/login.reducer';
 import * as fromStore from './store';
-import * as fromLoginActions from './store/actions/login.action'
+import * as fromLoginActions from './store/actions/login.action';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,15 +19,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initDataStore()
+    this.initDataStore();
   }
 
   initDataStore(): void {
-    const marketData = localStorage.getItem('market_data')
+    const marketData = localStorage.getItem('market_data');
     if (marketData) {
-      this.store.dispatch(new fromLoginActions.LoginComplete(JSON.parse(marketData)))
+      this.store.dispatch(new fromLoginActions.LoginComplete(JSON.parse(marketData)));
     }
   }
-
-
 }

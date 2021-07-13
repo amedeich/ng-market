@@ -4,8 +4,8 @@ export const CREATE_ACCOUNT_SUCCESS = '[User] CREATE_ACCOUNT_SUCCESS';
 export const CREATE_ACCOUNT_ERROR = '[User] CREATE_ACCOUNT_ERROR';
 export const CREATE_ACCOUNT_LOAD = '[User] CREATE_ACCOUNT_LOAD';
 
-export const UPDATE_ACCOUNT = '[User] UPDATE_ACCOUNT_SUCCESS'
-export const UPDATE_ACCOUNT_ERROR = '[User] UPDATE_ACCOUNT_ERROR'
+export const UPDATE_ACCOUNT = '[User] UPDATE_ACCOUNT_SUCCESS';
+export const UPDATE_ACCOUNT_ERROR = '[User] UPDATE_ACCOUNT_ERROR';
 
 export class createAccountLoad implements Action {
   readonly type = CREATE_ACCOUNT_LOAD;
@@ -18,12 +18,12 @@ export class createAccountError implements Action {
 }
 
 export class updateAccount implements Action {
-  readonly type = UPDATE_ACCOUNT
+  readonly type = UPDATE_ACCOUNT;
   constructor(public payload: any) {}
 }
 
 export class updateAccountError implements Action {
-  readonly type = UPDATE_ACCOUNT_ERROR
+  readonly type = UPDATE_ACCOUNT_ERROR;
   constructor(public payload: any) {}
 }
 

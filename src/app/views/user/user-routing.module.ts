@@ -7,10 +7,13 @@ const routes: Routes = [
   {
     path: '',
     component: UserComponent,
-    children: [{
-      path: 'orders',
-      component: OrdersComponent
-    }, {path: '**', redirectTo: 'orders'}]
+    children: [
+      {
+        path: 'orders',
+        component: OrdersComponent,
+      },
+      { path: '**', redirectTo: 'orders' },
+    ],
   },
 ];
 

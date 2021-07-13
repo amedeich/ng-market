@@ -2,12 +2,12 @@ import * as fromCreateAccount from '../actions/create-account.action';
 
 export interface createAccountState {
   loading: boolean;
-  errMsg: String
+  errMsg: String;
 }
 
 export const initialState: createAccountState = {
   loading: false,
-  errMsg: ''
+  errMsg: '',
 };
 
 export function reducer(state = initialState, action: fromCreateAccount.createAccountActions): createAccountState {
@@ -23,16 +23,16 @@ export function reducer(state = initialState, action: fromCreateAccount.createAc
       return {
         ...state,
         loading: false,
-        errMsg: ''
+        errMsg: '',
       };
     }
 
     case fromCreateAccount.CREATE_ACCOUNT_ERROR: {
-      const error = action.payload
+      const error = action.payload;
       return {
         ...state,
         loading: false,
-        errMsg: error.message
+        errMsg: error.message,
       };
     }
 

@@ -24,9 +24,9 @@ export class SignInComponent implements OnInit {
     if (!this.validateForm.valid) {
       return;
     }
-    const {value: email} = this.validateForm.controls.email
-    const {value: password} = this.validateForm.controls.password
-    this.store.dispatch(new fromStore.LoginLoad({email , password}))
+    const { value: email } = this.validateForm.controls.email;
+    const { value: password } = this.validateForm.controls.password;
+    this.store.dispatch(new fromStore.LoginLoad({ email, password }));
   }
 
   constructor(private fb: FormBuilder, private store: Store) {
