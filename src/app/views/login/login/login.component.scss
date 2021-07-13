@@ -11,3 +11,14 @@
 .logo-container {
   margin-bottom: 30px;
 }
+
+.helper-btn-container {
+  text-align: center;
+  &:hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}

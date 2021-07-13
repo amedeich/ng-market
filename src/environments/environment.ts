@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  GCP_URL: 'https://identitytoolkit.googleapis.com/v1',
+  API_KEY: 'AIzaSyDU74m2VCBPPb-D_Ozw8ktFymYYw0Ep6Io',
   production: false,
 };
 

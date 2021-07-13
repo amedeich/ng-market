@@ -1,1 +1,9 @@
-<p>user works!</p>
+<div class="page-container">
+  <div class="greetings">
+    <h1>Hola, {{(user$|async)?.name}}!!</h1>
+    <button (click)="logoutHandler()" class="logout-btn" nz-button nzSize="small" nzType="primary">Desconectarme</button>
+  </div>
+  <div style="text-align: center;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

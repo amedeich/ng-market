@@ -1,0 +1,23 @@
+.register-form {
+  max-width: 300px;
+  width: 250px;
+}
+
+.register-form-margin {
+  margin-bottom: 20px;
+}
+
+.register-form-button {
+  width: 100%;
+}
+
+.already-account-btn-container {
+  text-align: center;
+  &:hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}

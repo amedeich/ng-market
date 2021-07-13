@@ -1,8 +1,11 @@
 <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <div *ngIf="((user$ | async)?.errMsg)" style="text-align: center; margin-bottom: 12px;">
+    <small style="font-weight: bold; color: #ff4d4f" nz-typography nzType="danger">{{(user$ | async)?.errMsg}}</small>
+  </div>
   <nz-form-item>
-    <nz-form-control nzErrorTip="Ingresa tu usuario">
-      <nz-input-group nzPrefixIcon="user">
-        <input type="text" nz-input formControlName="userName" placeholder="Usuario" />
+    <nz-form-control nzErrorTip="Ingresa tu correo electrónico">
+      <nz-input-group nzPrefixIcon="mail">
+        <input type="text" nz-input formControlName="email" placeholder="Correo electrónico" />
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
@@ -13,8 +16,8 @@
       </nz-input-group>
     </nz-form-control>
   </nz-form-item>
-  <button nz-button nzGhost class="login-form-button login-form-margin">Entrar</button>
+  <button [disabled]="((user$ | async)?.loading)" nz-button nzGhost class="login-form-button login-form-margin">Entrar</button>
   <div class="register-btn-container">
-    <small style="color: #fff">¿No tienes una cuenta NgMarket?</small>
+    <small routerLink="/login/sign-up" style="color: #fff">¿No tienes una cuenta NgMarket?</small>
   </div>
 </form>

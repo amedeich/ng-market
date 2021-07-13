@@ -6,7 +6,7 @@
     <div class="app-slogan">
       <span>Encuentra los productos más top del mercado de tecnología</span>
     </div>
-    <div class="menu-container">
+    <div *ngIf="((user$ | async)?.isLoggedIn) else loginContainer" class="menu-container">
       <div class="menu-icon">
         <button routerLink="/user" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="user"></i></button>
       </div>
@@ -14,6 +14,11 @@
         <button (click)="openCart()" nz-button nzType="default" nzShape="circle"><i nz-icon nzType="shopping-cart"></i></button>
       </div>
     </div>
+    <ng-template  #loginContainer>
+      <div style="margin: 15px">
+        <button routerLink="/login" nz-button nzGhost>Iniciar Sesión</button>
+      </div>
+    </ng-template>
   </div>
 </div>
 

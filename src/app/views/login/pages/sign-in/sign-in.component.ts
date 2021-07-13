@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as fromStore from '../../../../store';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { LoginState } from 'src/app/store/reducers/login.reducer';
 
 @Component({
   selector: 'app-sign-in',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
   validateForm!: FormGroup;
+  user$: Observable<LoginState>;
 
   submitForm(): void {
     for (const i in this.validateForm.controls) {
@@ -22,15 +24,18 @@ export class SignInComponent implements OnInit {
     if (!this.validateForm.valid) {
       return;
     }
-    this.store.select(fromStore.getUserState).subscribe((state) => console.log(state));
-    // this.router.navigate(['/products']);
+    const {value: email} = this.validateForm.controls.email
+    const {value: password} = this.validateForm.controls.password
+    this.store.dispatch(new fromStore.LoginLoad({email , password}))
   }
 
-  constructor(private fb: FormBuilder, private router: Router, private store: Store<fromStore.MarketState>) {}
+  constructor(private fb: FormBuilder, private store: Store) {
+    this.user$ = this.store.select(fromStore.getUserState);
+  }
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
-      userName: [null, [Validators.required]],
+      email: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
   }

@@ -5,12 +5,14 @@ export interface LoginState {
   user: IUser;
   loading: boolean;
   isLoggedIn: boolean;
+  errMsg: String
 }
 
 export const initialState: LoginState = {
   user: {},
   loading: false,
   isLoggedIn: false,
+  errMsg: ''
 };
 
 export function reducer(state = initialState, action: fromLogin.LoginActions): LoginState {
@@ -23,10 +25,20 @@ export function reducer(state = initialState, action: fromLogin.LoginActions): L
     }
 
     case fromLogin.LOGIN_COMPLETE: {
+      const userResponse = action.payload
+      localStorage.setItem('market_data', JSON.stringify(userResponse))
       return {
         ...state,
+        user: {
+          id: userResponse.idToken,
+          name: userResponse.displayName,
+          session: {
+            token: userResponse.idToken
+          }
+        },
         loading: false,
         isLoggedIn: true,
+        errMsg: ''
       };
     }
 
@@ -35,6 +47,7 @@ export function reducer(state = initialState, action: fromLogin.LoginActions): L
         ...state,
         loading: false,
         isLoggedIn: false,
+        errMsg: 'No se puede autenticar al usuario, intente de nuevo.'
       };
     }
 

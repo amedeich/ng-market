@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 import { StoreModule } from '@ngrx/store';
-import { reducers } from './store/reducers';
+import { reducers, effects, clearState } from './store';
+import { EffectsModule } from '@ngrx/effects';
 
 registerLocaleData(en);
 
@@ -25,8 +26,10 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
     ComponentsModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({}, {metaReducers: [clearState]}),
     StoreModule.forFeature('market', reducers),
+    EffectsModule.forRoot(),
+    EffectsModule.forFeature(effects)
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
