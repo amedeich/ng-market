@@ -1,1 +1,20 @@
-<p>sign-in works!</p>
+<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Ingresa tu usuario">
+      <nz-input-group nzPrefixIcon="user">
+        <input type="text" nz-input formControlName="userName" placeholder="Usuario" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Ingresa tu contraseña">
+      <nz-input-group nzPrefixIcon="lock">
+        <input type="password" nz-input formControlName="password" placeholder="Contraseña" />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <button nz-button nzGhost class="login-form-button login-form-margin">Entrar</button>
+  <div class="register-btn-container">
+    <small style="color: #fff">¿No tienes una cuenta NgMarket?</small>
+  </div>
+</form>

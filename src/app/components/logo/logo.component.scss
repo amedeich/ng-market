@@ -1,0 +1,11 @@
+.logo {
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  user-select: none;
+  transform: rotate(-12deg);
+
+  & > .logo-mark {
+    color: #ffeb3b;
+  }
+}

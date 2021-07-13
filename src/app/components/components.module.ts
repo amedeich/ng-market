@@ -10,10 +10,11 @@ import { HeaderComponent } from './header/header.component';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { RouterModule } from '@angular/router';
 import { CartModule } from '../views/cart/cart.module';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
-  declarations: [ProductComponent, HeaderComponent],
-  exports: [ProductComponent, HeaderComponent],
+  declarations: [ProductComponent, HeaderComponent, LogoComponent],
+  exports: [ProductComponent, HeaderComponent, LogoComponent],
   imports: [
     CommonModule,
     CartModule,

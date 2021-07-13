@@ -1,0 +1,26 @@
+.login-form {
+  max-width: 300px;
+}
+
+.login-form-margin {
+  margin-bottom: 20px;
+}
+
+.login-form-forgot {
+  float: right;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.register-btn-container {
+  text-align: center;
+  &:hover {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  &:active {
+    opacity: 0.5;
+  }
+}
