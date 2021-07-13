@@ -9,7 +9,6 @@ import { NzDrawerPlacement } from 'ng-zorro-antd/drawer';
 export class HeaderComponent implements OnInit {
   showCart = false;
   placement: NzDrawerPlacement = 'right';
-
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import * as fromStore from '../../../../store';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -20,10 +22,11 @@ export class SignInComponent implements OnInit {
     if (!this.validateForm.valid) {
       return;
     }
-    this.router.navigate(['/products']);
+    this.store.select(fromStore.getUserState).subscribe((state) => console.log(state));
+    // this.router.navigate(['/products']);
   }
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private store: Store<fromStore.MarketState>) {}
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
