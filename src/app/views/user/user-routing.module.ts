@@ -5,16 +5,7 @@ import { UserComponent } from './user.component';
 const routes: Routes = [
   {
     path: '',
-    children: [
-      {
-        path: 'profile',
-        component: UserComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'profile',
-      },
-    ],
+    component: UserComponent,
   },
 ];
 
