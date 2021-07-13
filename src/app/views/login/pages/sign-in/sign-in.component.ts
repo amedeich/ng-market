@@ -18,9 +18,9 @@ export class SignInComponent implements OnInit {
       }
     }
     if (!this.validateForm.valid) {
-      return
+      return;
     }
-    this.router.navigate(['/products'])
+    this.router.navigate(['/products']);
   }
 
   constructor(private fb: FormBuilder, private router: Router) {}

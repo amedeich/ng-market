@@ -13,6 +13,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [SignUpComponent, SignInComponent, LoginComponent],
-  imports: [CommonModule, LoginRoutingModule, ComponentsModule, NzFormModule, NzInputModule, NzButtonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    LoginRoutingModule,
+    ComponentsModule,
+    NzFormModule,
+    NzInputModule,
+    NzButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class LoginModule {}
